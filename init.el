@@ -33,7 +33,7 @@
 ; update buffer when changed externally
 (global-auto-revert-mode 1)
 
-; Interactively od things
+; Interactively do things
 (require 'ido)
 (ido-mode t)
 
