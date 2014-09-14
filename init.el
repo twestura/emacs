@@ -25,6 +25,16 @@
 ; Sets the default width for auto-fill-mode
 (setq-default fill-column 80)
 
+; auto insert parentheses
+;(electric-pair-mode 1)
+
+; auto-pair mode
+; https://github.com/capitaomorte/autopair
+(add-to-list 'load-path "~/.emacs.d/autopair/")
+(require 'autopair)
+(autopair-global-mode)
+;(setq autopair-autowrap t)
+
 ; http://stackoverflow.com/questions/445873/how-can-i-make-emacs-mouse-scrolling-slower-and-smoother
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 ; mouse wheel scrolling
@@ -53,6 +63,12 @@
 (ac-config-default)
 (global-auto-complete-mode t)
 
+; indent guide
+; https://github.com/zk-phi/indent-guide
+(add-to-list 'load-path "~/.emacs.d/indent-guide")
+(require 'indent-guide)
+(indent-guide-global-mode)
+
 ; fill column indicator
 ; https://github.com/alpaker/Fill-Column-Indicator
 (add-to-list 'load-path "~/.emacs.d/Fill-Column-Indicator/")
@@ -66,4 +82,14 @@
 (setq ispell-program-name "aspell")
 (setq ispell-personal-dictionary "/usr/bin/aspell/dict")
 (require 'ispell)
+
+; ==============================================================================
+
+; C
+
+(setq-default c-basic-offset 4 c-default-style "linux")
+(setq-default tab-width 4 indent-tabs-mode t)
+
+
+; ==============================================================================
 
