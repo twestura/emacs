@@ -37,3 +37,33 @@
 (require 'ido)
 (ido-mode t)
 
+; color scheme
+; https://github.com/bbatsov/zenburn-emacs
+(add-to-list 'custom-theme-load-path "~/.emacs.d/zenburn-emacs/")
+(load-theme 'zenburn t)
+
+; auto-complete
+; https://github.com/auto-complete/auto-complete
+; (The github did not work, so I downloaded it from the website)
+; http://cx4a.org/software/auto-complete/#Latest_Stable
+(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1/")
+(require 'auto-complete)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict/")
+(require 'auto-complete-config)
+(ac-config-default)
+(global-auto-complete-mode t)
+
+; fill column indicator
+; https://github.com/alpaker/Fill-Column-Indicator
+(add-to-list 'load-path "~/.emacs.d/Fill-Column-Indicator/")
+(require 'fill-column-indicator)
+(define-globalized-minor-mode
+    global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode t)
+
+; Aspell
+(add-to-list 'exec-path "/usr/bin/aspell/")
+(setq ispell-program-name "aspell")
+(setq ispell-personal-dictionary "/usr/bin/aspell/dict")
+(require 'ispell)
+
