@@ -19,6 +19,11 @@
 (line-number-mode 1)  ; Display line number in the mode line
 (column-number-mode 1)  ; Display column number in the mode line
 
+(delete-selection-mode 1)  ; Delete the region like a normal editor
+
+; Set font
+(set-default-font "DejaVu Sans Mono-10")
+
 ; Sets the default mode for unknown files to text mode
 (setq-default major-mode 'text-mode)
 
@@ -90,6 +95,18 @@
 (setq-default c-basic-offset 4 c-default-style "linux")
 (setq-default tab-width 4 indent-tabs-mode t)
 
+
+; ==============================================================================
+
+; Python
+
+; python-mode
+; https://github.com/emacsmirror/python-mode
+(setq py-install-directory "~/.emacs.d/python-mode/")
+(add-to-list 'load-path py-install-directory)
+(require 'python-mode)
+
+(when (featurep 'python) (unload-feature 'python t))
 
 ; ==============================================================================
 
