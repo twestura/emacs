@@ -93,6 +93,10 @@
 (setq ispell-personal-dictionary "/usr/bin/aspell/dict")
 (require 'ispell)
 
+; flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(setq flycheck-check-syntax-automatically '(mode-enabled save))
+
 ; ==============================================================================
 
 ; C
