@@ -1,6 +1,11 @@
-; Travis Westura
-; emacs init file
+;;; init.el -- Summary
+; Initialization for Emacs
 
+;;; Commentary:
+; Travis Westura
+; Emacs init file
+
+;;; Code:
 (global-linum-mode t)  ; Line numbering
 (global-hl-line-mode t)  ; Highlight current row
 (show-paren-mode t)  ; match parentheses and the like
@@ -104,6 +109,9 @@
 (setq-default c-basic-offset 4 c-default-style "linux")
 (setq-default tab-width 4 indent-tabs-mode t)
 
+; spelling of comments
+(add-hook 'cc-mode-hook 'flyspell-prog-mode)
+
 
 ; ==============================================================================
 
@@ -116,6 +124,9 @@
 (require 'python-mode)
 
 (when (featurep 'python) (unload-feature 'python t))
+
+; spelling of comments
+(add-hook 'python-mode-hook 'flyspell-prog-mode)
 
 ; pymacs
 ; https://github.com/pinard/Pymacs
