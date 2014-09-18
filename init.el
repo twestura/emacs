@@ -21,6 +21,9 @@
 
 (delete-selection-mode 1)  ; Delete the region like a normal editor
 
+; require final newlines in files when they are saved
+(setq require-final-newline t)
+
 ; Set font
 (set-default-font "DejaVu Sans Mono-10")
 
@@ -30,8 +33,10 @@
 ; Sets the default width for auto-fill-mode
 (setq-default fill-column 80)
 
-; auto insert parentheses
-;(electric-pair-mode 1)
+; cask
+; how to install: http://cask.readthedocs.org/en/latest/guide/installation.html
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
 
 ; auto-pair mode
 ; https://github.com/capitaomorte/autopair
@@ -107,6 +112,22 @@
 (require 'python-mode)
 
 (when (featurep 'python) (unload-feature 'python t))
+
+; pymacs
+; https://github.com/pinard/Pymacs
+; run make, and then python setup.py install
+(add-to-list 'load-path "~/.emacs.d/Pymacs")
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+(autoload 'pymacs-autoload "pymacs")
+
+; rope and ropemacs installed using pip
+; https://github.com/python-rope/ropemacs
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
 
 ; ==============================================================================
 
