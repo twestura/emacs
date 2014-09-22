@@ -1,4 +1,6 @@
-((("pymacs-load" .
+((("add-hook" .
+   [1 0 0 0 0 0 0 0])
+  ("pymacs-load" .
    [1 0 0 0 0 0 0 0 0 0 0])
   ("autoload" .
    [4 0 0 1 0 0 0 1])

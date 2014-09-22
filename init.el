@@ -110,7 +110,7 @@
 (setq-default tab-width 4 indent-tabs-mode t)
 
 ; spelling of comments
-(add-hook 'cc-mode-hook 'flyspell-prog-mode)
+(add-hook 'c-mode-hook 'flyspell-prog-mode)
 
 
 ; ==============================================================================
