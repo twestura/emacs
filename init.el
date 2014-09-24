@@ -5,6 +5,9 @@
 ; Travis Westura
 ; Emacs init file
 
+; Unfortunately it seems like the git repositories that I clone
+; are not uploaded to GitHub, so I need to clone them again.
+
 ;;; Code:
 (global-linum-mode t)  ; Line numbering
 (global-hl-line-mode t)  ; Highlight current row
@@ -30,7 +33,7 @@
 (setq require-final-newline t)
 
 ; Set font
-(set-default-font "DejaVu Sans Mono-10")
+(set-frame-font "DejaVu Sans Mono-10")
 
 ; Sets the default mode for unknown files to text mode
 (setq-default major-mode 'text-mode)
@@ -70,13 +73,15 @@
 ; auto-complete
 ; https://github.com/auto-complete/auto-complete
 ; (The github did not work, so I downloaded it from the website)
+; Trying again, it looks like the github was successful
+; Or maybe not.  There is no error, but it does not seem to work
 ; http://cx4a.org/software/auto-complete/#Latest_Stable
-(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1/")
-(require 'auto-complete)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict/")
-(require 'auto-complete-config)
-(ac-config-default)
-(global-auto-complete-mode t)
+;(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1/")
+;(require 'auto-complete)
+;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict/")
+;(require 'auto-complete-config)
+;(ac-config-default)
+;(global-auto-complete-mode t)
 
 ; indent guide
 ; https://github.com/zk-phi/indent-guide
@@ -119,7 +124,9 @@
 
 ; python-mode
 ; https://github.com/emacsmirror/python-mode
-(setq py-install-directory "~/.emacs.d/python-mode/")
+; seems like this is the official website:
+; https://launchpad.net/python-mode
+(setq py-install-directory "~/.emacs.d/python-mode.el-6.1.3/")
 (add-to-list 'load-path py-install-directory)
 (require 'python-mode)
 
@@ -145,4 +152,6 @@
 (pymacs-load "ropemacs" "rope-")
 
 ; ==============================================================================
+
+;;; init.el ends here
 
