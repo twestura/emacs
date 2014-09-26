@@ -153,5 +153,74 @@
 
 ; ==============================================================================
 
+; LaTeX
+
+; TODO figure out how to get latexmk to work on Fedora
+
+; LaTeX options
+
+; The following three blocks were taken from here:
+; http://www.emacswiki.org/emacs/AUCTeX
+
+(setq TeX-parse-self t) ; Enable parse on load.
+(setq TeX-auto-save t) ; Enable parse on save.
+;;(setq-default TeX-master nil) ; use when splitting into multiple files
+
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
+
+(setq-default TeX-PDF-mode t) ; compile to pdf mode by default
+(setq-default Tex-Interactive-mode t) ; Stop on errors (Interactive mode)
+
+(add-hook 'LaTeX-mode-hook 'auto-fill-mode)
+
+;(add-hook 'LaTeX-mode-hook 'outline-minor-mode)
+
+(setq preview-image-type 'pnm)
+
+;; Folding
+;; http://www.flannaghan.com/2013/01/11/tex-fold-mode
+(add-hook 'LaTeX-mode-hook
+		  (lambda ()
+			(TeX-fold-mode 1)
+			(add-hook 'find-file-hook 'TeX-fold-buffer t t)))
+
+;; Sentence-fill hack
+;; ==================
+;; https://thingsthatpassforknowledge.wordpress.com/2011/10/08/emacs-prettifies-plain-text-files-for-version-control/
+
+(defun my-fill-latex-paragraph ()
+  "Fill the current paragraph, separating sentences w/ a newline.
+
+AUCTeX's latex.el reimplements the fill functions and is *very* convoluted.
+We use part of it --- skip comment par we are in."
+  (interactive)
+  (if (save-excursion
+		(beginning-of-line) (looking-at TeX-comment-start-regexp))
+	  (TeX-comment-forward)
+	(let ((to (progn
+				(LaTeX-forward-paragraph)
+				(point)))
+		  (from (progn
+				  (LaTeX-backward-paragraph)
+				  (point)))
+		  (to-marker (make-marker)))
+	  (set-marker to-marker to)
+	  (while (< from (marker-position to-marker))
+		(forward-sentence)
+		(setq tmp-end (point))
+		(LaTeX-fill-region-as-paragraph from tmp-end)
+		(setq from (point))
+		(unless (bolp)
+		  (LaTeX-newline))))))
+
+(eval-after-load "latex"
+  '(define-key LaTeX-mode-map (kbd "M-q") 'my-fill-latex-paragraph))
+
+; ==============================================================================
+
 ;;; init.el ends here
 
