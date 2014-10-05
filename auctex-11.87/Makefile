@@ -44,14 +44,14 @@ styledir = $(packagedatadir)/style
 AUCTEXDATE = 2012-11-30
 AUCTEXVERSION = 11.87
 
-INSTALL = /usr/bin/install -c
+INSTALL = /bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 MKINSTALLDIRS = ./mkinstalldirs
 DESTDIR=
 
 PACKAGE=auctex
 PACKAGE_INFO=auctex preview-latex
-EMACS=/usr/bin/emacs
+EMACS=/bin/emacs
 ELCC=$(EMACS) -batch -q -no-site-file -no-init-file -l lpath.el
 AUTOLOAD=--eval '(let ((generated-autoload-file (expand-file-name "$@"))) \
   (mapcar (function update-file-autoloads) command-line-args-left) \

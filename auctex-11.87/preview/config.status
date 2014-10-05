@@ -429,7 +429,7 @@ gives unlimited permission to copy, distribute and modify it."
 
 ac_pwd='/home/twestura/.emacs.d/auctex-11.87/preview'
 srcdir='.'
-INSTALL='/usr/bin/install -c'
+INSTALL='/bin/install -c'
 test -n "$AWK" || AWK=awk
 # The default lists apply if the user does not specify any file.
 ac_need_defaults=:
@@ -586,16 +586,16 @@ echo 'BEGIN {' >"$ac_tmp/subs1.awk" &&
 cat >>"$ac_tmp/subs1.awk" <<\_ACAWK &&
 S["LTLIBOBJS"]=""
 S["LIBOBJS"]=""
-S["TEXHASH"]="/usr/bin/texhash"
+S["TEXHASH"]="/bin/texhash"
 S["packagetexstyles"]=""
 S["lisppackagetexstyles"]=""
 S["previewdocdir"]="/usr/share/texlive/texmf-dist/tex/latex/preview"
 S["previewtexmfdir"]="/usr/share/texlive/texmf-dist/tex/latex/preview"
 S["texmfdir"]="/usr/share/texlive/texmf-dist/tex/latex"
-S["TEX"]="/usr/bin/tex"
+S["TEX"]="/bin/tex"
 S["TEXMFGEN"]="preview.sty prauctex.def prauctex.cfg prshowbox.def prshowlabels.def prtracingall.def prtightpage.def prlyx.def prcounters.def prfootnotes.def"
-S["PDFLATEX"]="/usr/bin/pdflatex"
-S["LATEX"]="/usr/bin/latex"
+S["PDFLATEX"]="/bin/pdflatex"
+S["LATEX"]="/bin/latex"
 S["lispGS"]=""
 S["GS"]="gs"
 S["auctexdir"]=".."
@@ -609,7 +609,7 @@ S["lispdir"]="/usr/share/emacs/site-lisp"
 S["packagedir"]="no"
 S["EMACS_FLAVOR"]="emacs"
 S["XEMACS"]="no"
-S["EMACS"]="/usr/bin/emacs"
+S["EMACS"]="/bin/emacs"
 S["INSTALL_DATA"]="${INSTALL} -m 644"
 S["INSTALL_SCRIPT"]="${INSTALL}"
 S["INSTALL_PROGRAM"]="${INSTALL}"

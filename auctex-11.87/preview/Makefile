@@ -25,7 +25,7 @@
 
 PACKAGE=preview
 PACKAGE_INFO=preview-latex
-EMACS=/usr/bin/emacs
+EMACS=/bin/emacs
 ELCC=$(EMACS) -batch -q -no-site-file -no-init-file
 AUCTEX=-eval '(let ((dir (pop command-line-args-left))) \
   (if (not (string-equal dir "")) (push dir load-path)))' $(auctexdir) --eval '(push "." load-path)'
@@ -55,7 +55,7 @@ packagelispdir = /usr/share/emacs/site-lisp/auctex$(null)
 auctexdir = ..$(null)
 DESTDIR=
 
-INSTALL = /usr/bin/install -c
+INSTALL = /bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 MKINSTALLDIRS = ../mkinstalldirs
 

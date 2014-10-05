@@ -107,6 +107,23 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (setq flycheck-check-syntax-automatically '(idle-change save mode-enabled))
 
+; undo-tree (to get easier redo)
+; http://www.dr-qubit.org/undo-tree/undo-tree-0.6.4.el
+; git clone http://www.dr-qubit.org/git/undo-tree.git
+(add-to-list 'load-path "~/.emacs.d/undo-tree")
+(require 'undo-tree)
+(global-undo-tree-mode 1)
+
+;http://stackoverflow.com/questions/9688748/emacs-comment-uncomment-current-line
+(defun comment-or-uncomment-region-or-line ()
+    "Comments or uncomments the region or current line if there's no region."
+    (interactive)
+    (let (beg end)
+        (if (region-active-p)
+            (setq beg (region-beginning) end (region-end))
+            (setq beg (line-beginning-position) end (line-end-position)))
+        (comment-or-uncomment-region beg end)))
+
 ; ==============================================================================
 
 ; C
@@ -187,6 +204,8 @@
 		  (lambda ()
 			(TeX-fold-mode 1)
 			(add-hook 'find-file-hook 'TeX-fold-buffer t t)))
+
+(setq TeX-save-query nil) ;;autosave before compiling
 
 ;; Sentence-fill hack
 ;; ==================

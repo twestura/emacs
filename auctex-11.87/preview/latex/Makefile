@@ -22,10 +22,10 @@
 # MA 02110-1301, USA.
 
 
-LATEX=/usr/bin/latex
-PDFLATEX=/usr/bin/pdflatex
-TEX=/usr/bin/tex
-TEXHASH=/usr/bin/texhash
+LATEX=/bin/latex
+PDFLATEX=/bin/pdflatex
+TEX=/bin/tex
+TEXHASH=/bin/texhash
 
 prefix=/usr/local$(null)
 datarootdir=${prefix}/share$(null)
@@ -37,7 +37,7 @@ previewdocdir = /usr/share/texlive/texmf-dist/tex/latex/preview$(null)
 TEXMFGEN = preview.sty prauctex.def prauctex.cfg prshowbox.def prshowlabels.def prtracingall.def prtightpage.def prlyx.def prcounters.def prfootnotes.def
 
 DESTDIR=
-INSTALL = /usr/bin/install -c
+INSTALL = /bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 MKINSTALLDIRS = ../../mkinstalldirs
 
