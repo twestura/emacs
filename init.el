@@ -26,6 +26,7 @@
 (setq make-backup-files nil)  ; stop creating backup~ files
 (setq auto-save-default nil)  ; stop creating #autosave# files
 
+(size-indication-mode 1)  ; Display the percentage of buffer above window top
 (line-number-mode 1)  ; Display line number in the mode line
 (column-number-mode 1)  ; Display column number in the mode line
 
@@ -42,6 +43,9 @@
 
 ; Sets the default width for auto-fill-mode
 (setq-default fill-column 80)
+
+; ede mode
+(global-ede-mode t)
 
 ; cask
 ; how to install: http://cask.readthedocs.org/en/latest/guide/installation.html
@@ -66,11 +70,6 @@
 ; Interactively do things
 (require 'ido)
 (ido-mode t)
-
-; color scheme
-; https://github.com/bbatsov/zenburn-emacs
-(add-to-list 'custom-theme-load-path "~/.emacs.d/zenburn-emacs/")
-(load-theme 'zenburn t)
 
 ; auto-complete
 ; https://github.com/auto-complete/auto-complete
@@ -116,10 +115,38 @@
 (require 'undo-tree)
 (global-undo-tree-mode 1)
 
+; dash
+; https://github.com/magnars/dash.el
+(add-to-list 'load-path "~/.emacs.d/dash")
+(require 'dash)
+; include to get syntax highlighting
+(eval-after-load "dash" '(dash-enable-font-lock))
+
+; smart mode line
+(add-to-list 'load-path "~/.emacs.d/smart-mode-line")
+(add-to-list 'load-path "~/.emacs.d/smart-mode-line/rich-minority")
+(require 'smart-mode-line)
+(setq sml/no-confirm-load-theme t)
+(sml/setup)
+
+; I put zenburn after the smart mode line, it changes the colors of the line
+
+; color scheme
+; https://github.com/bbatsov/zenburn-emacs
+(add-to-list 'custom-theme-load-path "~/.emacs.d/zenburn-emacs/")
+(load-theme 'zenburn t)
+
 ; sr-speedbar
 ; http://www.emacswiki.org/emacs/download/sr-speedbar.el
 (add-to-list 'load-path "~/.emacs.d/speedbar")
 (require 'sr-speedbar)
+
+; Big tutorial
+; http://tuhdo.github.io/c-ide.html
+
+;(global-semantic-idle-summary-mode 1)
+;(global-semantic-stickyfunc-mode 1)
+
 
 ;http://stackoverflow.com/questions/9688748/emacs-comment-uncomment-current-line
 (defun comment-or-uncomment-region-or-line ()
@@ -148,7 +175,7 @@
 
 ; python-mode
 ; https://github.com/emacsmirror/python-mode
-; seems like this is the official website:
+; seems like this is the official website
 ; https://launchpad.net/python-mode
 (setq py-install-directory "~/.emacs.d/python-mode.el-6.1.3/")
 (add-to-list 'load-path py-install-directory)
@@ -251,3 +278,16 @@ We use part of it --- skip comment par we are in."
 
 ;;; init.el ends here
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default)))
+ '(ede-project-directories (quote ("/home/twestura/Desktop/tmp/myproject/include" "/home/twestura/Desktop/tmp/myproject/src" "/home/twestura/Desktop/tmp/myproject" "/home/twestura/Desktop"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
