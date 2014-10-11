@@ -17,6 +17,8 @@
 (menu-bar-mode -1)  ; No menu bar
 (fset 'yes-or-no-p 'y-or-n-p)  ; change yes or no options to y or n
 
+;(server-start)  ; I hope this works, but seems easier without it
+
 ; set the default frame width to 90 characters
 ; Note that line numbers take space on the side
 (add-to-list 'default-frame-alist '(width . 90))
@@ -48,8 +50,8 @@
 
 ; auto-pair mode
 ; https://github.com/capitaomorte/autopair
-(add-to-list 'load-path "~/.emacs.d/autopair/")
-(require 'autopair)
+(add-to-list 'load-path "~/.emacs.d/autopair")
+(require 'autopair)  ; I do not know why this error appears, the file seems fine
 (autopair-global-mode)
 ;(setq autopair-autowrap t)
 
@@ -114,6 +116,11 @@
 (require 'undo-tree)
 (global-undo-tree-mode 1)
 
+; sr-speedbar
+; http://www.emacswiki.org/emacs/download/sr-speedbar.el
+(add-to-list 'load-path "~/.emacs.d/speedbar")
+(require 'sr-speedbar)
+
 ;http://stackoverflow.com/questions/9688748/emacs-comment-uncomment-current-line
 (defun comment-or-uncomment-region-or-line ()
     "Comments or uncomments the region or current line if there's no region."
@@ -167,6 +174,7 @@
 ; https://github.com/python-rope/ropemacs
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")
+
 
 ; ==============================================================================
 
