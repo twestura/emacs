@@ -108,12 +108,26 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (setq flycheck-check-syntax-automatically '(idle-change save mode-enabled))
 
+; company auto-complete
+; https://github.com/company-mode/company-mode
+(add-to-list 'load-path "~/.emacs.d/company-mode")
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
 ; undo-tree (to get easier redo)
 ; http://www.dr-qubit.org/undo-tree/undo-tree-0.6.4.el
 ; git clone http://www.dr-qubit.org/git/undo-tree.git
 (add-to-list 'load-path "~/.emacs.d/undo-tree")
 (require 'undo-tree)
 (global-undo-tree-mode 1)
+
+; helm
+; https://github.com/emacs-helm/helm
+;; [Facultative] Only if you have installed async.
+(add-to-list 'load-path "~/.emacs.d/emacs-async")
+
+(add-to-list 'load-path "~/.emacs.d/helm")
+(require 'helm-config)
 
 ; dash
 ; https://github.com/magnars/dash.el
@@ -157,6 +171,15 @@
             (setq beg (region-beginning) end (region-end))
             (setq beg (line-beginning-position) end (line-end-position)))
         (comment-or-uncomment-region beg end)))
+
+; http://www.emacswiki.org/emacs/BackToIndentationOrBeginning
+(defun back-to-indentation-or-beginning ()
+  "Smarter move to beginning of line."
+  (interactive)
+  (if (= (point) (progn (back-to-indentation) (point)))
+	  (beginning-of-line)))
+
+(global-set-key (kbd "C-a") 'back-to-indentation-or-beginning)
 
 ; ==============================================================================
 
