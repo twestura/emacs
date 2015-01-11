@@ -1,0 +1,67 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/twestura/Documents/Cornell/ECON1110/LectureNotes/" . "Lecture6/")
+ ("/home/twestura/Documents/Cornell/ECON1110/BookNotes/" . "Chapter8/")
+ ("/home/twestura/Documents/Cornell/ECON1110/" . "BookNotes/")
+ ("/home/twestura/Documents/Cornell/" . "ECON1110/")
+ ("/home/twestura/Documents/" . "Cornell/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/twestura/Desktop/anothertest/"
+ "/home/twestura/Documents/Cornell/ECON1110/BookNotes/Chapter8/"
+ "/home/twestura/Documents/Cornell/ECON1110/BookNotes/Chapter7/"
+ "/home/twestura/Documents/Cornell/ECON1110/LectureNotes/Lecture6/"
+ "/home/twestura/Documents/Cornell/ECON1110/LectureNotes/Lecture5/"
+ "/home/twestura/Documents/Cornell/ECON1110/BookNotes/Chapter6/"
+ "/home/twestura/Documents/Cornell/ECON1110/BookNotes/Chapter5/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "mystyle.css"
+ "Chapter8.tex"
+ "Chapter7.tex"
+ "Lect6.tex"
+ "lect5.tex"
+ "Chapter6.tex"
+ "Chapter5.tex"
+ "mystyle.sty"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/twestura/Desktop/anothertest/" (21670 3361 674990 346000) "./" "index.html" "colorchanger.html" ".mystyle.css.un~" "mystyle.css~" "mystyle.css" "../")
+
+ ("/home/twestura/Documents/Cornell/ECON1110/BookNotes/Chapter8/" (21668 53458 699635 299000) "./" "mystyle" "../")
+
+ ("/home/twestura/Documents/Cornell/ECON1110/BookNotes/" (21668 53447 259635 465000) "Chapter5/" "Chapter6/" "./" "Chapter7/" "Chapter1/" "Chapter2/" "Chapter4/" "Chapter8/" "../" "Chapter3/")
+
+ ("/home/twestura/Documents/Cornell/ECON1110/BookNotes/Chapter7/" (21668 52786 809645 33000) "./" "Chapter7.out" "Chapter7.tex" "Chapter7.pdf" "Chapter7.aux" "mystyle.sty" "Chapter7.log" "auto/" "../")
+
+ ("/home/twestura/Documents/Bookshelf/" (21661 55684 372303 383000) "./" "Learning_GNU_Emacs_3rd_Edition.pdf" "OReilly.Learning.the.vi.and.Vim.Editors.7th.Edition.Jul.2008.pdf" "../")
+
+ ("/home/twestura/" (21668 46452 901393 774000) "Desktop/" ".adobe/" ".zshrc" ".pylint.d/" ".thumbnails/" "./" ".ICEauthority" ".vboxclient-draganddrop.pid" ".vboxclient-seamless.pid" ".ipython/" ".histfile" ".bash_history" ".bash_logout" ".aspell.en.prepl" ".macromedia/" ".config/" ".cask/" ".cache/" ".dbus/" ".zcompdump-arch-5.0.7" ".vboxclient-clipboard.pid" ".git-credential-cache/" ".bash_profile" ".gitconfig" "Documents/" ".esd_auth" ".python_history" ".eclipse/" ".gnupg/" ".oh-my-zsh/" ".vboxclient-display.pid" ".kde4/" "Downloads/" ".viminfo" ".pip/" ".zsh-update" ".vimrc" ".bashrc" ".Xauthority" ".emacs.d/" "../" ".mozilla/" ".local/" ".directory" ".zsh_history" ".texlive/" ".zcompdump")
+
+ ("/home/twestura/Documents/Cornell/ECON1110/BookNotes/Chapter5/" (21667 44492 979082 924000) "Chapter5.aux" "./" "Chapter5.out" "mystyle.sty" "Chapter5.tex" "Chapter5.log" "Chapter5.pdf" "auto/" "../")
+
+ ("/home/twestura/Documents/Cornell/ECON1110/LectureNotes/Lecture6/" (21668 26308 245980 22000) "./" "mystyle.sty" "../")
+
+ ("/home/twestura/Documents/Cornell/ECON1110/LectureNotes/" (21668 26301 845980 121000) "Lecture1/" "./" "Lecture6/" "Lecture2/" "Lecture3/" "Lecture5/" "Lecture4/" "../")
+
+ ("/home/twestura/Documents/Cornell/ECON1110/LectureNotes/Lecture5/" (21668 26227 465981 263000) "lect5.tex" "./" "mystyle.sty" "lect5.aux" "lect5.log" "lect5.out" "auto/" "lect5.pdf" "../")
+
+ ("/home/twestura/Documents/Cornell/ECON1110/BookNotes/Chapter6/" (21668 17761 663054 372000) "./" "mystyle.sty" "Chapter6.log" "Chapter6.aux" "auto/" "Chapter6.out" "../" "Chapter6.tex" "Chapter6.pdf")
+
+ ("/home/twestura/Documents/Cornell/ECON1110/" (21664 62863 859109 12000) "./" "BookNotes/" "LectureNotes/" "../")
+
+ ("/home/twestura/Documents/Cornell/" (21664 59832 549064 105000) "./" "../" "ECON1110/")
+
+ ("/home/twestura/Documents/" (21664 59827 259064 26000) "java/" "./" "Dresden.jpg" "githubPage/" "Bookshelf/" "Cornell/" "Germany.jpg" "../" ".directory")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

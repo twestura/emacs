@@ -175,6 +175,14 @@ global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (load-theme 'zenburn t)
 
 ;; =============================================================================
+;; EVIL for using vim commands
+;; =============================================================================
+
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
+
+;; =============================================================================
 ;; This section contains extensions specific to working with C code.
 ;; =============================================================================
 
